@@ -1,0 +1,251 @@
+# ============================================================
+# ENVIRONMENT / SECRETS
+# ============================================================
+
+.env
+.env.*
+!.env.example
+!.env.template
+
+# Local configuration
+*.local
+
+
+# ============================================================
+# PYTHON / FASTAPI
+# ============================================================
+
+# Byte-compiled / optimized files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Python cache
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.pyre/
+.pytype/
+
+# Coverage
+.coverage
+.coverage.*
+htmlcov/
+.pytest_cache/
+
+# Type checking
+.dmypy.json
+dmypy.json
+
+# Packaging
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# Python version managers
+.python-version
+
+# Jupyter
+.ipynb_checkpoints/
+
+# FastAPI / Uvicorn logs
+*.log
+
+
+# ============================================================
+# NODE / REACT
+# ============================================================
+
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+build/
+out/
+
+# React / Next.js / Vite
+.next/
+.nuxt/
+.svelte-kit/
+.vite/
+
+# npm
+.npm/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Package manager caches
+.npm/
+.pnpm-store/
+
+# Optional npm cache
+.cache/
+
+
+# ============================================================
+# TESTING
+# ============================================================
+
+coverage/
+.nyc_output/
+
+# Playwright
+playwright-report/
+test-results/
+blob-report/
+
+# Cypress
+cypress/screenshots/
+cypress/videos/
+cypress/downloads/
+
+
+# ============================================================
+# DATABASE / LOCAL DATA
+# ============================================================
+
+# SQLite databases
+*.db
+*.sqlite
+*.sqlite3
+
+# Local database files
+*.sqlite-journal
+*.db-journal
+
+# Local uploads
+uploads/
+media/
+
+# If you have generated/static files
+static/generated/
+
+
+# ============================================================
+# LOGS
+# ============================================================
+
+*.log
+logs/
+log/
+
+
+# ============================================================
+# IDE / EDITORS
+# ============================================================
+
+# VS Code
+.vscode/
+
+# JetBrains
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# Vim
+*.swp
+*.swo
+*~
+
+# Sublime Text
+*.sublime-workspace
+*.sublime-project
+
+
+# ============================================================
+# OPERATING SYSTEM
+# ============================================================
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+Desktop.ini
+
+# Linux
+.directory
+
+
+# ============================================================
+# TEMPORARY FILES
+# ============================================================
+
+tmp/
+temp/
+*.tmp
+*.temp
+
+# Backup files
+*.bak
+*.backup
+
+# Generated files
+*.generated
+
+
+# ============================================================
+# DOCKER
+# ============================================================
+
+# Docker override files
+docker-compose.override.yml
+
+# Local Docker environment
+.docker/
+
+
+# ============================================================
+# CREDENTIALS / CERTIFICATES
+# ============================================================
+
+*.pem
+*.key
+*.crt
+*.p12
+*.pfx
+
+# Service account / cloud credentials
+credentials.json
+service-account.json
+*-credentials.json
+
+
+# ============================================================
+# LOCAL AI / ML FILES (if applicable)
+# ============================================================
+
+*.bin
+*.safetensors
+*.pt
+*.pth
+*.onnx
+
+models/
+
+
+# ============================================================
+# GENERATED DOCUMENTS / EXPORTS
+# ============================================================
+
+exports/
+generated/
