@@ -69,6 +69,19 @@ function AppShell({ profile, setProfile, isSidebarOpen, setIsSidebarOpen }) {
     navigate(path);
   };
 
+  function handleNavigationWheel(event) {
+    const navigation = event.currentTarget;
+
+    if (navigation.scrollWidth <= navigation.clientWidth) {
+      return;
+    }
+
+    if (Math.abs(event.deltaY) > Math.abs(event.deltaX)) {
+      event.preventDefault();
+      navigation.scrollLeft += event.deltaY;
+    }
+  }
+
   return (
     <main className="app-shell">
       <ProfileSidebar
@@ -89,7 +102,7 @@ function AppShell({ profile, setProfile, isSidebarOpen, setIsSidebarOpen }) {
         </button>
 
         <nav className="navbar" aria-label="LeetLens navigation">
-          <ul className="navbar-list">
+          <ul className="navbar-list" onWheel={handleNavigationWheel}>
             {navigationItems.map((item) => (
               <li className="navbar-item" key={item.path}>
                 <button
