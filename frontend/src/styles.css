@@ -67,6 +67,14 @@ a { color: inherit; text-decoration: none; }
   background: linear-gradient(135deg, var(--onyx), var(--jet));
 }
 
+.avatar-box img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  object-fit: cover;
+}
+
 .avatar-placeholder {
   display: grid;
   width: 100%;

@@ -447,7 +447,7 @@ function QuestionAnalyticsPage({ username }) {
               <CartesianGrid stroke="rgba(255,255,255,0.08)" vertical={false} />
               <XAxis dataKey="difficulty" stroke="#aaa" tick={{ fontSize: 11 }} />
               <YAxis allowDecimals={false} stroke="#aaa" tick={{ fontSize: 11 }} />
-              <Tooltip contentStyle={chartTooltipStyle} />
+              <Tooltip {...chartTooltipProps} />
               <Bar dataKey="count" radius={[6, 6, 0, 0]}>
                 {difficulty.map((item) => (
                   <Cell key={item.difficulty} fill={difficultyColors[item.difficulty]} />
@@ -472,7 +472,7 @@ function QuestionAnalyticsPage({ username }) {
                   <Cell key={item.difficulty} fill={difficultyColors[item.difficulty]} />
                 ))}
               </Pie>
-              <Tooltip contentStyle={chartTooltipStyle} />
+              <Tooltip {...chartTooltipProps} />
             </PieChart>
           </ResponsiveContainer>
           <div className="chart-legend">
@@ -502,7 +502,7 @@ function QuestionAnalyticsPage({ username }) {
                   <CartesianGrid stroke="rgba(255,255,255,0.08)" horizontal={false} />
                   <XAxis type="number" allowDecimals={false} stroke="#aaa" tick={{ fontSize: 11 }} />
                   <YAxis type="category" dataKey="name" width={110} stroke="#aaa" tick={{ fontSize: 11 }} />
-                  <Tooltip contentStyle={chartTooltipStyle} />
+                  <Tooltip {...chartTooltipProps} />
                   <Bar dataKey="solved" fill="#f5c451" radius={[0, 6, 6, 0]} />
                 </BarChart>
               </ResponsiveContainer>
@@ -627,7 +627,7 @@ function ContestAnalyticsPage({ username }) {
                 <CartesianGrid stroke="rgba(255,255,255,0.08)" vertical={false} />
                 <XAxis dataKey="label" stroke="#aaa" tick={{ fontSize: 10 }} />
                 <YAxis allowDecimals={false} stroke="#aaa" tick={{ fontSize: 11 }} />
-                <Tooltip contentStyle={chartTooltipStyle} />
+                <Tooltip {...chartTooltipProps} />
                 <Line type="monotone" dataKey="rating" stroke="#f5c451" strokeWidth={2.5} dot={{ r: 3, fill: "#202020", stroke: "#f5c451", strokeWidth: 2 }} />
               </LineChart>
             </ResponsiveContainer>
@@ -827,7 +827,7 @@ function SubmissionCalendarPage({ username }) {
               <CartesianGrid stroke="rgba(255,255,255,0.08)" vertical={false} />
               <XAxis dataKey="bucket" stroke="#aaa" tick={{ fontSize: 11 }} />
               <YAxis allowDecimals={false} stroke="#aaa" tick={{ fontSize: 11 }} />
-              <Tooltip contentStyle={chartTooltipStyle} />
+              <Tooltip {...chartTooltipProps} />
               <Bar dataKey="days" fill="#f5c451" radius={[6, 6, 0, 0]} />
             </BarChart>
           </ResponsiveContainer>
@@ -934,11 +934,15 @@ function AnalyticsState({ title, message, isError = false }) {
   );
 }
 
-const chartTooltipStyle = {
-  border: "1px solid hsl(0, 0%, 22%)",
-  borderRadius: "8px",
-  background: "hsl(240, 2%, 13%)",
-  color: "hsl(0, 0%, 98%)",
+const chartTooltipProps = {
+  contentStyle: {
+    border: "1px solid hsl(0, 0%, 22%)",
+    borderRadius: "8px",
+    background: "hsl(240, 2%, 13%)",
+  },
+  labelStyle: { color: "hsl(0, 0%, 98%)" },
+  itemStyle: { color: "hsl(0, 0%, 98%)" },
+  cursor: false,
 };
 
 const difficultyColors = {
